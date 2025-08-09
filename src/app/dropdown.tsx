@@ -12,10 +12,10 @@ import {
 type Props = {
   title: string;
   lable: string;
-  value1: string;
-  value2: string;
-  value3: string;
-  value4: string;
+  option1: string;
+  option2: string;
+  option3: string;
+  option4: string;
   value: string;
   onChange: (val: string) => void;
 };
@@ -23,10 +23,10 @@ type Props = {
 export function SelectDemo({
   title,
   lable,
-  value1,
-  value2,
-  value3,
-  value4,
+  option1,
+  option2,
+  option3,
+  option4,
   value,
   onChange,
 }: Props) {
@@ -38,10 +38,10 @@ export function SelectDemo({
       <SelectContent>
         <SelectGroup>
           <SelectLabel>{lable}</SelectLabel>
-          <SelectItem value={value1}>{value1}</SelectItem>
-          <SelectItem value={value2}>{value2}</SelectItem>
-          <SelectItem value={value3}>{value3}</SelectItem>
-          <SelectItem value={value4}>{value4}</SelectItem>
+          <SelectItem value={option1}>{option1}</SelectItem>
+          <SelectItem value={option2}>{option2}</SelectItem>
+          <SelectItem value={option3}>{option3}</SelectItem>
+          <SelectItem value={option4}>{option4}</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

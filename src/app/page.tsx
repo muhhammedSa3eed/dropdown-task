@@ -36,10 +36,10 @@ export default function Home() {
           onChange={handleCountryChange}
           title="Select Your Country"
           lable="Countries"
-          value1="Egypt"
-          value2="Spain"
-          value3="France"
-          value4="Miami"
+          option1="Egypt"
+          option2="Spain"
+          option3="France"
+          option4="Miami"
         />
         <label>Fav Sport</label>
         <SelectDemo
@@ -47,10 +47,10 @@ export default function Home() {
           onChange={handleSportChange}
           title="Select Your Favourite Sport"
           lable="Sports"
-          value1="Football"
-          value2="Tennis"
-          value3="Handball"
-          value4="Ragby"
+          option1="Football"
+          option2="Tennis"
+          option3="Handball"
+          option4="Ragby"
         />
       </div>
 
