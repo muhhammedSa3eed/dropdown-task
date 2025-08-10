@@ -4,46 +4,39 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
 
+type Option = {
+  key: string;
+  label: string;
+};
+
 type Props = {
   title: string;
-  lable: string;
-  option1: string;
-  option2: string;
-  option3: string;
-  option4: string;
+  options: Option[];
   value: string;
   onChange: (val: string) => void;
 };
 
-export function SelectDemo({
-  title,
-  lable,
-  option1,
-  option2,
-  option3,
-  option4,
-  value,
-  onChange,
-}: Props) {
+export function SelectDemo({ title, options, value, onChange }: Props) {
   return (
-    <Select value={value} onValueChange={onChange}>
-      <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder={title} />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectLabel>{lable}</SelectLabel>
-          <SelectItem value={option1}>{option1}</SelectItem>
-          <SelectItem value={option2}>{option2}</SelectItem>
-          <SelectItem value={option3}>{option3}</SelectItem>
-          <SelectItem value={option4}>{option4}</SelectItem>
-        </SelectGroup>
-      </SelectContent>
-    </Select>
+    <div className="w-100 ">
+      <Select value={value} onValueChange={onChange}>
+        <SelectTrigger className="w-[180px]">
+          <SelectValue placeholder={title} />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            {options.map((opt) => (
+              <SelectItem key={opt.key} value={opt.key}>
+                {opt.label}
+              </SelectItem>
+            ))}
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+    </div>
   );
 }
